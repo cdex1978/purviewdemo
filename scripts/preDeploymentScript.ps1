@@ -10,7 +10,7 @@ function getUserPrincipalId() {
 }
 
 function selectLocation() {
-    $locationList='australiaeast', 'brazilsouth', 'canadacentral', 'centralindia', 'eastus', 'eastus2', 'southcentralus', 'southeastasia', 'uksouth', 'westeurope'
+    $locationList='westeurope', 'westeurope', 'westeurope', 'westeurope', 'westeurope', 'westeurope', 'westeurope', 'westeurope', 'westeurope', 'westeurope'
     $location = Get-Random -InputObject $locationList
     Return $location
 }
@@ -80,7 +80,7 @@ $suffix = -join ((48..57) + (97..122) | Get-Random -Count 5 | ForEach-Object {[c
 $location = selectLocation
 
 # Create Resource Group
-$resourceGroup = New-AzResourceGroup -Name "pvdemo-rg-${suffix}" -Location $location
+$resourceGroup = New-AzResourceGroup -Name "synapse-purview-${suffix}" -Location $location
 $resourceGroupName = $resourceGroup.ResourceGroupName
 
 # Create Service Principal
